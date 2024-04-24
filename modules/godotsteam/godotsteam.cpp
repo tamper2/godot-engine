@@ -5006,9 +5006,9 @@ Dictionary Steam::getConnectionRealTimeStatus(uint32 connection, int lanes, bool
 		// Append the status
 		real_time_status["response"] = result;
 		// If the result is good, get more data
-		if (result == 0) {
+		if (result == RESULT_OK) {
 			// Get the connection status if requested
-			Dictionary connection_status;
+			Dictionary connection_status; 
 			if (get_status) {
 				connection_status["state"] = this_status.m_eState;
 				connection_status["ping"] = this_status.m_nPing;
